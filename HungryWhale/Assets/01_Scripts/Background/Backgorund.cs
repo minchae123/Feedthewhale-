@@ -5,8 +5,13 @@ using UnityEngine;
 public class Backgorund : MonoBehaviour
 {
     float totalMove;
-    public GameObject P;
+    private GameObject Player;
     private float lastPos;
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+    }
 
     private void Update()
     {
@@ -15,11 +20,11 @@ public class Backgorund : MonoBehaviour
 
     private void BGMove()
     {
-        totalMove = lastPos - P.transform.position.x;
+        totalMove = lastPos - Player.transform.position.x;
         if (Mathf.Abs(totalMove) > 19.2f)
         {
-            transform.position = new Vector3(P.transform.position.x, transform.position.y, 0);
-            lastPos = P.transform.position.x;
+            transform.position = new Vector3(Player.transform.position.x, transform.position.y, 0);
+            lastPos = Player.transform.position.x;
             totalMove = 0;
         }
     }
