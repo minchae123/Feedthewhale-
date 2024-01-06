@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private GameObject player;
-    private float speed = 5;
+    private float speed = 4;
 
     private void Update()
     {
@@ -26,7 +26,7 @@ public class Fish : MonoBehaviour
 
     private void Check()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) > 18)
+        if (Vector3.Distance(player.transform.position, transform.position) > 20)
         {
             FishSpawner.instance.spawnCount--;
             Destroy(gameObject);

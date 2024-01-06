@@ -309,6 +309,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1558195789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1032583
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.006951
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0918219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281626273418133352, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320162439633949073, guid: d7eb76db890c1904cad0018b11752367, type: 3}
+      propertyPath: m_Name
+      value: JellyfishSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7eb76db890c1904cad0018b11752367, type: 3}
 --- !u!1001 &2074110631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 6850973513031655405, guid: 25e2905d9d39f79469fe9c694ac35306, type: 3}
     - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
       propertyPath: smallFish.Array.size
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
       propertyPath: smallFish.Array.data[0]
@@ -530,5 +587,21 @@ PrefabInstance:
       propertyPath: smallFish.Array.data[4]
       value: 
       objectReference: {fileID: 6850973513031655405, guid: 25e2905d9d39f79469fe9c694ac35306, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[5]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: d2344071a41368248ab01ee12bdd5d0b, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[6]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: 1f43a0e5cb5e2d740be2b660679a7fae, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[7]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: 4d57e2af293f4bb46b8e41de8e5f9354, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[8]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: eb9c03dd11fe09d4f89d272c220dd509, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
