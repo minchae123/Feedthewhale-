@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1fd19bbc68f47459d3adc78849ed5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallFish: {fileID: 6850973513031655405, guid: ea116453e1a024b469e798480a968111, type: 3}
+  smallFish:
+  - {fileID: 6850973513031655405, guid: d6f4fd16ff7bb6a43bfd73917b8b7b6a, type: 3}
+  - {fileID: 6850973513031655405, guid: c5d9364f9730b8347b3c1115d351ecc7, type: 3}
+  - {fileID: 6850973513031655405, guid: 7072a1c799c8b0a4e8312619a20345c7, type: 3}
+  - {fileID: 6850973513031655405, guid: 73102cf404cdeea44b82f37ddf0b42a1, type: 3}
+  - {fileID: 6850973513031655405, guid: 25e2905d9d39f79469fe9c694ac35306, type: 3}
   spawnCount: 0
