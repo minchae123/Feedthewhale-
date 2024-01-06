@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Anchor : MonoBehaviour
 {
-    [SerializeField] Camera Cam;
+    public CinemachineVirtualCamera Cam;
+    private CinemachineBasicMultiChannelPerlin _virtualCameraNoise;
+
 
     private int _maxKeyCount = 20;
     private int _currentkeyCount = 0;
 
     private float _currentTime = 0f;
     private float _clearTime = 5f;
-    private float _camShake;
-    private float _camDuration;
 
+    private void Start()
+    {
+        _currentTime = _clearTime;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,6 +36,7 @@ public class Anchor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                StartCoroutine(ShakeCam(0.2f,3f));
                 _currentkeyCount++;
             }
 
@@ -43,6 +49,17 @@ public class Anchor : MonoBehaviour
         {
             GameOver();
         }
+    }
+
+    IEnumerator ShakeCam(float delay, float value)
+    {
+        _virtualCameraNoise = Cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        _virtualCameraNoise.m_FrequencyGain = value;
+        _virtualCameraNoise.m_AmplitudeGain = value;
+        yield return new WaitForSeconds(delay);
+        _virtualCameraNoise.m_AmplitudeGain = 0;
+        _virtualCameraNoise.m_FrequencyGain = 0;
     }
 
     private void ClearGame()
