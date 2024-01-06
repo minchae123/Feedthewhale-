@@ -17,7 +17,8 @@ public class OceanCurrents : MonoBehaviour
     IEnumerator ActiveOceanCurrents()
     {
         yield return new WaitForSeconds(20);
-        player.GetComponent<Rigidbody2D>().AddForce(new Vector3((Random.Range(0, 2) == 0 ? 1 : -1) * 500, 0, 0));
+        int rand = Random.Range(0, 2) == 0 ? 1 : -1;
+        player.GetComponent<Rigidbody2D>().AddForce(new Vector3(rand * 500, 0, 0));
         StartCoroutine(ActiveOceanCurrents());
     }
 }
