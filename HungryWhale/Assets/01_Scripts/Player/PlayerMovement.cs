@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 dir;
 
 	private Player player;
+	[SerializeField] private BoxCollider2D eatCollider;
 
 	private void Awake()
 	{
@@ -52,10 +53,14 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
 		{
+			Vector2 offset = new Vector2(0, 0.12f);
+			eatCollider.offset = offset;
 			spriteRenderer.flipX = false;
 		}
 		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
 		{
+			Vector2 offset = new Vector2(2.65f, 0.12f);
+			eatCollider.offset = offset;
 			spriteRenderer.flipX = true;
 		}
 	}
