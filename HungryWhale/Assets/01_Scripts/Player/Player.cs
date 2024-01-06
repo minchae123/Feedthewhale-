@@ -13,9 +13,12 @@ public class Player : MonoBehaviour
 
 	public ParticleSystem crazyParticle;
 
+	private SpriteRenderer spriteRenderer;
+
 	private void Awake()
 	{
 		playerAnimator = GetComponent<PlayerAnimator>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 		playerEat = GetComponent<PlayerEat>();
 	}
 
@@ -33,6 +36,14 @@ public class Player : MonoBehaviour
 	{
 		HP -= value;
 		UIManager.Instance.SliderValue(HP);
+		StartCoroutine(Blink());
+	}
+
+	IEnumerator Blink()
+	{
+		spriteRenderer.color = Color.red;
+		yield return new WaitForSeconds(1);
+		spriteRenderer.color = Color.white;
 	}
 
 	public void IncreaseHP(int value)

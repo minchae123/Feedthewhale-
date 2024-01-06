@@ -19,4 +19,10 @@ public class GameManager : MonoBehaviour
 
 		Player = FindObjectOfType<Player>().gameObject;
 	}
+
+	private void Update()
+	{
+		if(FishCount % 10 == 0)
+			FindObjectOfType<Player>().IncreaseHP(10);
+	}
 }

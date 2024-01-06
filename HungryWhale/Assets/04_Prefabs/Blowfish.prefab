@@ -98,6 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc764ac94c15ae4ba2f1dfc22d4440a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatSpeed: 0.8
+  floatHeight: 1.2
+  spriteRenderer: {fileID: 0}
+  wow: {fileID: 0}
+  basic: {fileID: 0}
 --- !u!58 &2466378020410191986
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,4 +118,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.5

@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Move();
 		Flip();
+
+		if(GameManager.Instance.FishCount == 10)
+			transform.localScale = Vector3.one * 1.1f;
+		if(GameManager.Instance.FishCount == 20)
+			transform.localScale = Vector3.one * 1.3f;
+
 	}
 
 	public void Move()

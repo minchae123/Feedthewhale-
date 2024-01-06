@@ -7,9 +7,9 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject _canvas;
 
-    public void GameStart()
+    public void GameStart(int a)
     {
-        SceneManager.LoadScene(SceneName.InGame);
+        SceneManager.LoadScene(a);
     }
 
     public void Explain()
