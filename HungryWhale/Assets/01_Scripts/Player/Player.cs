@@ -15,11 +15,14 @@ public class Player : MonoBehaviour
 
 	private SpriteRenderer spriteRenderer;
 
+	private AudioSource audioSource;
+
 	private void Awake()
 	{
 		playerAnimator = GetComponent<PlayerAnimator>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		playerEat = GetComponent<PlayerEat>();
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	private void Start()
@@ -30,6 +33,11 @@ public class Player : MonoBehaviour
 	private void Update()
 	{
 
+	}
+
+	public void Blop()
+	{
+		audioSource.Play();
 	}
 
 	public void DecreaseHP(int value)

@@ -5,11 +5,21 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer Instance;
+
     public TextMeshProUGUI timerText;
 
     public int timer = 0;
 
-    private void Start()
+	private void Awake()
+	{
+		if(Instance != null)
+            print("Timer Error");
+
+        Instance = this;
+	}
+
+	private void Start()
     {
         StartCoroutine(TimerCoroution());
     }

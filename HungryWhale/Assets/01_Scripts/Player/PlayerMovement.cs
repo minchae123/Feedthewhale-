@@ -26,12 +26,6 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Move();
 		Flip();
-
-		if(GameManager.Instance.FishCount == 10)
-			transform.localScale = Vector3.one * 1.1f;
-		if(GameManager.Instance.FishCount == 20)
-			transform.localScale = Vector3.one * 1.3f;
-
 	}
 
 	public void Move()
@@ -75,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public void SpeedControl(float speed)
 	{
-		StartCoroutine(SpeedCool(3, speed));
+		StartCoroutine(SpeedCool(2, speed));
 	}
 
 	IEnumerator SpeedCool(float time, float speed)

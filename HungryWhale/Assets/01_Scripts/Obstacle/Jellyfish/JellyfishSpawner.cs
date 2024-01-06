@@ -9,7 +9,7 @@ public class JellyfishSpawner : MonoBehaviour
     public int spawnCount = 0;
 
     private GameObject player;
-    private int maxSpawn = 2;
+    private int maxSpawn = 1;
 
     private void Awake()
     {

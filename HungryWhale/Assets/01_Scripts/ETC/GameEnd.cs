@@ -21,6 +21,8 @@ public class GameEnd : MonoBehaviour
     private void FailCheck()
     {
         if (player.HP <= 0) SceneManager.LoadScene("Fail");
+
+        if(Timer.Instance.timer >= 300) SceneManager.LoadScene("Fail");
     }
 
     private void SuccessCheck()
