@@ -50,11 +50,11 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
 		{
-			spriteRenderer.flipX = true;
+			spriteRenderer.flipX = false;
 		}
 		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
 		{
-			spriteRenderer.flipX = false;
+			spriteRenderer.flipX = true;
 		}
 	}
 
