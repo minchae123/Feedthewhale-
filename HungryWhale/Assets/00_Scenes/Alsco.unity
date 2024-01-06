@@ -195,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1209,7 +1209,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1613,7 +1613,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3199,6 +3199,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[0]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: d6f4fd16ff7bb6a43bfd73917b8b7b6a, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[1]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: c5d9364f9730b8347b3c1115d351ecc7, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[2]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: 7072a1c799c8b0a4e8312619a20345c7, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[3]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: 73102cf404cdeea44b82f37ddf0b42a1, type: 3}
+    - target: {fileID: 4884622813906089535, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
+      propertyPath: smallFish.Array.data[4]
+      value: 
+      objectReference: {fileID: 6850973513031655405, guid: 25e2905d9d39f79469fe9c694ac35306, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf116a30913c724e8c56a5f95fe7ddb, type: 3}
 --- !u!4 &2116607891 stripped

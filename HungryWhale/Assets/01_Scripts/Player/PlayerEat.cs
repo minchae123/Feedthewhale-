@@ -21,11 +21,11 @@ public class PlayerEat : MonoBehaviour
 			isEatting = true;
 			player.playerAnimator.SetAttack(isEatting);
 		}
+
 		if (Input.GetMouseButtonUp(0))
 		{
 			isEatting = false;
 			player.playerAnimator.SetAttack(isEatting);
 		}
-
 	}
 }
