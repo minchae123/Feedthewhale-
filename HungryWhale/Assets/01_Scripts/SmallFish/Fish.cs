@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private GameObject player;
-    private float speed = 5;
+    private float speed = 4;
 
     private void Update()
     {
