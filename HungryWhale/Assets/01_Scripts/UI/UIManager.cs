@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-	[HideInInspector]
-	public UIManager Instance;
+	public static UIManager Instance;
 
 	private AudioSource audioSource;
 
 	[SerializeField] private GameObject EscPanel;
+
+	[SerializeField] private Slider hpSlider;
 
 	private void Awake()
 	{
@@ -53,5 +55,10 @@ public class UIManager : MonoBehaviour
 	public void ExitGame()
 	{
 		Application.Quit();
+	}
+
+	public void SliderValue(int value)
+	{
+		hpSlider.value = value;
 	}
 }

@@ -17,18 +17,25 @@ public class Player : MonoBehaviour
 		playerEat = GetComponent<PlayerEat>();
 	}
 
+	private void Start()
+	{
+		UIManager.Instance.SliderValue(HP);
+	}
+
 	private void Update()
 	{
-		
+
 	}
 
 	public void DecreaseHP(int value)
 	{
 		HP -= value;
+		UIManager.Instance.SliderValue(HP);
 	}
 
 	public void IncreaseHP(int value)
 	{
 		HP += value;
+		UIManager.Instance.SliderValue(HP);
 	}
 }

@@ -7,7 +7,7 @@ public class PlayerAnimator : MonoBehaviour
 	private Animator animator;
 
 	private readonly int moveHash = Animator.StringToHash("speed");
-	private readonly int attackHash = Animator.StringToHash("attack");
+	private readonly int attackHash = Animator.StringToHash("isAttack");
 
 	private void Awake()
 	{
@@ -21,15 +21,6 @@ public class PlayerAnimator : MonoBehaviour
 
 	public void SetAttack(bool value)
 	{
-		if (value)
-		{
-			animator.SetTrigger(attackHash);
-		}
-		else
-		{
-			animator.ResetTrigger(attackHash);
-		}
+		animator.SetBool(attackHash, value);
 	}
-
-
 }
