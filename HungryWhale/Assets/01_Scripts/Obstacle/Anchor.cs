@@ -8,27 +8,35 @@ public class Anchor : MonoBehaviour
     public CinemachineVirtualCamera Cam;
     private CinemachineBasicMultiChannelPerlin _virtualCameraNoise;
 
-
     private int _maxKeyCount = 20;
     private int _currentkeyCount = 0;
 
     private float _currentTime = 0f;
     private float _clearTime = 5f;
 
+    private bool isCatch = false;
+
     private void Start()
     {
         _currentTime = _clearTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.TryGetComponent(out Player p))
         {
-            FastTyping();
+            isCatch = true;
+            p.transform.parent = gameObject.transform;
         }
     }
 
-    private void FastTyping()
+	private void Update()
+	{
+		if(isCatch)
+            FastTyping();
+	}
+
+	private void FastTyping()
     {
         _currentTime -= Time.deltaTime;
 
@@ -64,10 +72,13 @@ public class Anchor : MonoBehaviour
 
     private void ClearGame()
     {
-        Debug.Log("게임 클리어");
+        isCatch = false;
+        Player p = FindObjectOfType<Player>();
+        p.transform.parent = null;
     }
+
     private void GameOver()
     {
-        Debug.Log("게임 오버");
+        print("게임 오바");
     }
 }
