@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    private GameObject player;
+    public float explosionRadius = 3f; 
+    public GameObject explosionEffect;
+    public float fuseTime = 3f;
 
-    private Vector2 startPosition;
+    private GameObject player;
 
     private void Start()
     {
-        startPosition = transform.position;
-    }
-
-    private void Update()
-    {
+        // 코루틴 시작
         Check();
+        StartCoroutine(StartFuse());
     }
 
-    public void SetPlayer()
+    public void SetPlayer(GameObject p)
     {
-        //player = p;
-        player = GameManager.Instance.Player;
+        player = p;
     }
 
     private void Check()
@@ -33,12 +31,31 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator StartFuse()
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        yield return new WaitForSeconds(fuseTime);
+
+        Explode();
+    }
+
+    private void Explode()
+    {
+        
+        if (explosionEffect != null)
         {
-            Destroy(gameObject);
-            player.gameObject.GetComponent<Player>().DecreaseHP(10);
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
+        foreach (Collider2D hitCollider in colliders)
+        {
+            if (hitCollider.CompareTag("Player"))
+            {
+                player.gameObject.GetComponent<Player>().DecreaseHP(10);
+            }
+        }
+        BombSpawner.instance.spawnCount--;
+        Destroy(gameObject);
     }
 }

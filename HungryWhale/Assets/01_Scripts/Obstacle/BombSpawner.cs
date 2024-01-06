@@ -29,7 +29,7 @@ public class BombSpawner : MonoBehaviour
         if (spawnCount < maxSpawn)
         {
             GameObject bomb = Instantiate(_Bomb, new Vector3(player.transform.position.x + Random.Range(-20f, 20f), player.transform.position.y + Random.Range(-2.6f, 6f), 0), Quaternion.identity);
-            bomb.GetComponent<Bomb>().SetPlayer();
+            bomb.GetComponent<Bomb>().SetPlayer(player);
             spawnCount++;
         }
 
