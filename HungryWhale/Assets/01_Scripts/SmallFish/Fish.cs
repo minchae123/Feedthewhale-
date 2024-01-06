@@ -36,6 +36,7 @@ public class Fish : MonoBehaviour
     public void Eaten()
     {
         UIManager.Instance.FishCountText(++GameManager.Instance.FishCount);
+        FishSpawner.instance.spawnCount--;
         Destroy(gameObject);
     }
 
