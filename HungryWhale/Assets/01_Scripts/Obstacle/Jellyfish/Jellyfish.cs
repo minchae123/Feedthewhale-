@@ -17,6 +17,7 @@ public class Jellyfish : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<Player>().DecreaseHP(5);
+            collision.GetComponent<Player>().SpinParticle();
             collision.GetComponent<PlayerMovement>().SpeedControl(0);
             JellyfishSpawner.instance.spawnCount--;
             Destroy(gameObject);
