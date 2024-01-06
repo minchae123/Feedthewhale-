@@ -5,7 +5,6 @@ using UnityEngine;
 public class Trash : MonoBehaviour
 {
     private GameObject player;
-    private float speed = 5;
 
     public float floatSpeed = 1.0f; // µÕµÕ ¶°´Ù´Ï´Â ¼Óµµ
     public float floatHeight = 1.0f; // µÕµÕ ³ôÀÌ
