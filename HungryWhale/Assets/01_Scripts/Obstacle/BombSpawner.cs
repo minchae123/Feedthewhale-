@@ -9,7 +9,7 @@ public class BombSpawner : MonoBehaviour
     public int spawnCount = 0;
 
     private GameObject player;
-    private int maxSpawn = 3;
+    private int maxSpawn = 2;
 
     private void Awake()
     {

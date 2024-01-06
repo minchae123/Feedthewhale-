@@ -124,7 +124,9 @@ public class Anchor : MonoBehaviour
     IEnumerator NewHoke()
 	{
 		Player p = FindObjectOfType<Player>(); 
-        Instantiate(this, new Vector3(p.transform.position.x + Random.Range(-20f, 20f), p.transform.position.y + Random.Range(-2.6f, 7f), 0), Quaternion.identity);
+        Vector3 pos = new Vector3(p.transform.position.x + Random.Range(-20f, 20f), p.transform.position.y + Random.Range(-2.6f, 7f), 0);
+        pos.y = Mathf.Clamp(pos.y, 1.78f, 8f);
+        Instantiate(this, pos, Quaternion.identity);
         yield return null;
 	}
 
@@ -132,8 +134,6 @@ public class Anchor : MonoBehaviour
     {
         Player p = FindObjectOfType<Player>();
         p.transform.parent = null;
-
-        print("게임 오바");
     }
 
     IEnumerator FadeSpace()
