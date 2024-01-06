@@ -53,4 +53,13 @@ public class Trash : MonoBehaviour
         Destroy(gameObject);
         player.gameObject.GetComponent<Player>().DecreaseHP(5);
     }
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.TryGetComponent(out PlayerEat p))
+        {
+            if (p.isEatting)
+                Eaten();
+        }
+    }
 }

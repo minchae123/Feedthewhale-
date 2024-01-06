@@ -35,6 +35,17 @@ public class Fish : MonoBehaviour
 
     public void Eaten()
     {
+        UIManager.Instance.FishCountText(++GameManager.Instance.FishCount);
         Destroy(gameObject);
     }
+
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+        if (collision.TryGetComponent(out PlayerEat p))
+        {
+           if (p.isEatting)
+                Eaten();
+        }
+    }
+
 }
