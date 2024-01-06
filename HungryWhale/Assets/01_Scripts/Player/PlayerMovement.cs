@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour
 
 	private Vector3 dir;
 
+	private Player player;
+
 	private void Awake()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		player = GetComponent<Player>();
 		basicSpeed = moveSpeed;
 	}
 
@@ -33,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
 		float y = Input.GetAxisRaw("Vertical");
 
 		dir = new Vector2(x, y);
+
+		if(dir.magnitude > 0)
+			player.playerAnimator.SetMove(1);
+		else
+			player.playerAnimator.SetMove(0);
+
 
 		transform.position += dir * moveSpeed * Time.deltaTime;
 	}

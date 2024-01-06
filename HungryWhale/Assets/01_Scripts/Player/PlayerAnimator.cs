@@ -9,7 +9,6 @@ public class PlayerAnimator : MonoBehaviour
 	private readonly int moveHash = Animator.StringToHash("speed");
 	private readonly int attackHash = Animator.StringToHash("attack");
 
-
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();

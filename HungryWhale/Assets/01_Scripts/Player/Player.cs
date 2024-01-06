@@ -6,16 +6,20 @@ public class Player : MonoBehaviour
 {
 	public int HP = 100;
 
+	[HideInInspector]
+	public PlayerAnimator playerAnimator;
+	public PlayerEat playerEat;
+
 	private void Awake()
 	{
-		
+		playerAnimator = GetComponent<PlayerAnimator>();
+		playerEat = GetComponent<PlayerEat>();
 	}
 
 	private void Update()
 	{
 		
 	}
-
 
 	public void DecreaseHP(int value)
 	{
