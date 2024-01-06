@@ -6,7 +6,7 @@ public class PlayerEat : MonoBehaviour
 {
 	public bool isEatting = false;
 
-	private Player player;
+	public Player player;
 
 	private void Awake()
 	{

@@ -16,6 +16,12 @@ public class Anchor : MonoBehaviour
 
     private bool isCatch = false;
 
+    public float moveSpeed = 5f; // 이동 속도
+    public float changeInterval = 2f; // 방향 변경 주기
+
+    private float timer; // 경과 시간
+    private Vector3 randomDirection; // 랜덤한 이동 방향
+
     private void Start()
     {
         _currentTime = _clearTime;
@@ -33,10 +39,12 @@ public class Anchor : MonoBehaviour
 	private void Update()
 	{
 		if(isCatch)
+		{
             FastTyping();
-	}
+        }
+    }
 
-	private void FastTyping()
+    private void FastTyping()
     {
         _currentTime -= Time.deltaTime;
 
@@ -79,6 +87,8 @@ public class Anchor : MonoBehaviour
 
     private void GameOver()
     {
+        Player p = FindObjectOfType<Player>();
+        p.transform.parent = null;
         print("게임 오바");
     }
 }

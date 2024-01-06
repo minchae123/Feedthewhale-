@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 		float x = Input.GetAxisRaw("Horizontal");
 		float y = Input.GetAxisRaw("Vertical");
 
-		dir = new Vector2(x, y);
+		dir = new Vector2(x, y).normalized;
 
 		if (dir.magnitude > 0)
 			player.playerAnimator.SetMove(1);
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 			player.playerAnimator.SetMove(0);
 
 		Vector3 pos = transform.position + (dir * moveSpeed * Time.deltaTime);
-		pos.y = Mathf.Clamp(pos.y, -4.87f, 6.54f);
+		pos.y = Mathf.Clamp(pos.y, -3.85f, 8.69f);
 
 		transform.position = pos;
 	}

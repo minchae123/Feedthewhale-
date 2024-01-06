@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/00_Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/00_Scenes/Success.unity
-    guid: afb004e07926e8948bd584a57d050d00
-  - enabled: 1
-    path: Assets/00_Scenes/Fail.unity
-    guid: e835e790ff708174182420d8228df3c6
+    path: Assets/00_Scenes/InGame.unity
+    guid: 8fe74b7e133571440a56ae23c834a778
   m_configObjects: {}

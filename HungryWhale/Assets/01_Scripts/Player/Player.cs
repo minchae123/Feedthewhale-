@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 	[HideInInspector]
 	public PlayerEat playerEat;
 
+	public ParticleSystem crazyParticle;
+
 	private void Awake()
 	{
 		playerAnimator = GetComponent<PlayerAnimator>();
@@ -37,5 +39,10 @@ public class Player : MonoBehaviour
 	{
 		HP += value;
 		UIManager.Instance.SliderValue(HP);
+	}
+
+	public void SpinParticle()
+	{
+		crazyParticle.Play();
 	}
 }
