@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject EscPanel;
 
 	[SerializeField] private Slider hpSlider;
+	[SerializeField] private TextMeshProUGUI fishCountTxt;
+	[SerializeField] private GameObject fishCountPanel;
 
 	private void Awake()
 	{
@@ -29,6 +33,11 @@ public class UIManager : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
 			Esc();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Q))
+		{
+			FishCountText(3);
 		}
 	}
 
@@ -60,5 +69,18 @@ public class UIManager : MonoBehaviour
 	public void SliderValue(int value)
 	{
 		hpSlider.value = value;
+	}
+
+	public void FishCountText(int count)
+	{
+		fishCountTxt.text = "x " + count.ToString();
+		StartCoroutine(BigAndSmall());
+	}
+
+	IEnumerator BigAndSmall()
+	{
+		fishCountPanel.transform.DOScale(Vector3.one * 1.1f, 0.2f);
+		yield return new WaitForSeconds(0.2f);
+		fishCountPanel.transform.DOScale(Vector3.one, 0.2f);
 	}
 }

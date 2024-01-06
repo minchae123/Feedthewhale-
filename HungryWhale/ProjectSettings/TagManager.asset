@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - WhaleMouse
+  - Trash
+  - Fish
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camera
   - Water
   - UI
   - Player
-  - 
+  - Mouse
   - 
   - 
   - 

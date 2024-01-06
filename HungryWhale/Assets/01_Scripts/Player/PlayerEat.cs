@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerEat : MonoBehaviour
 {
-	private bool isEatting = false;
+	public bool isEatting = false;
 
 	private Player player;
 
 	private void Awake()
 	{
-		player = GetComponent<Player>();
+		player = GetComponentInParent<Player>();
 	}
 
 	private void Update()
