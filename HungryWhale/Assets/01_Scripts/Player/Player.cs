@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
 	[HideInInspector]
 	public PlayerAnimator playerAnimator;
+	[HideInInspector]
 	public PlayerEat playerEat;
 
 	private void Awake()
