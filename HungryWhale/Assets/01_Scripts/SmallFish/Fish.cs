@@ -6,7 +6,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private GameObject player;
-    private float speed = 8;
+    private float speed = 5;
 
     private void Update()
     {
@@ -19,7 +19,7 @@ public class Fish : MonoBehaviour
         player = p;
     }
 
-    private void Move() 
+    private void Move()
     {
         transform.position += new Vector3((GetComponent<SpriteRenderer>().flipX ? 1 : -1) * speed * Time.deltaTime, 0, 0);
     }
@@ -31,5 +31,10 @@ public class Fish : MonoBehaviour
             FishSpawner.instance.spawnCount--;
             Destroy(gameObject);
         }
+    }
+
+    public void Eaten()
+    {
+        Destroy(gameObject);
     }
 }
