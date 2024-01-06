@@ -40,23 +40,8 @@ public class Anchor : MonoBehaviour
 	{
 		if(isCatch)
 		{
-            timer += Time.deltaTime;
-            if (timer >= changeInterval)
-            {
-                SetRandomDirection();
-                timer = 0f;
-            }
-
-            transform.Translate(randomDirection * moveSpeed * Time.deltaTime);
-
             FastTyping();
-
         }
-    }
-
-    void SetRandomDirection()
-    {
-        randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
     }
 
     private void FastTyping()

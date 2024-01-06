@@ -59,7 +59,9 @@ public class Trash : MonoBehaviour
         if (collision.TryGetComponent(out PlayerEat p))
         {
             if (p.isEatting)
+			{
                 Eaten();
+            }
         }
     }
 }

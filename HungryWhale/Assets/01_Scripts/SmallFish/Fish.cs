@@ -45,7 +45,9 @@ public class Fish : MonoBehaviour
         if (collision.TryGetComponent(out PlayerEat p))
         {
            if (p.isEatting)
+			{
                 Eaten();
+            }
         }
     }
 
