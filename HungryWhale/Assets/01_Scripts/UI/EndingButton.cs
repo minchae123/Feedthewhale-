@@ -12,6 +12,6 @@ public class EndingButton : MonoBehaviour
 
     public void ReStart()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(0);
     }
 }
