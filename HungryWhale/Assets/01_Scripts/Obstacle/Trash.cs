@@ -49,6 +49,7 @@ public class Trash : MonoBehaviour
 
     public void Eaten()
     {
+        TrashSpawner.instance.spawnCount--;
         Destroy(gameObject);
         player.gameObject.GetComponent<Player>().DecreaseHP(5);
     }

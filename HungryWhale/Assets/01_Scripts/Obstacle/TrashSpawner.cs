@@ -27,7 +27,7 @@ public class TrashSpawner : MonoBehaviour
     {
         if (spawnCount < maxSpawn)
         {
-            GameObject trash = Instantiate(TrashList[Random.Range(0,5)], new Vector3(player.transform.position.x + Random.Range(-20f, 20f), player.transform.position.y + Random.Range(-2.6f, 10f), 0), Quaternion.identity);
+            GameObject trash = Instantiate(TrashList[Random.Range(0,5)], new Vector3(player.transform.position.x + Random.Range(-20f, 20f),Random.Range(-3f, 6.5f), 0), Quaternion.identity);
             trash.GetComponent<Trash>().SetPlayer(player);
             
             spawnCount++;

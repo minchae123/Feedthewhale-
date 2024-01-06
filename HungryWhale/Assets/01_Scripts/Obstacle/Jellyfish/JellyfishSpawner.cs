@@ -27,7 +27,7 @@ public class JellyfishSpawner : MonoBehaviour
     {
         if (spawnCount < maxSpawn)
         {
-            GameObject jellyfish = Instantiate(Jellyfish, new Vector3(player.transform.position.x + Random.Range(-20f, 20f), Random.Range(-2.6f, 10f), 0), Quaternion.identity);
+            GameObject jellyfish = Instantiate(Jellyfish, new Vector3(player.transform.position.x + Random.Range(-20f, 20f), Random.Range(-3f, 6.5f), 0), Quaternion.identity);
             jellyfish.GetComponent<Jellyfish>().SetPlayer(player);
             int dir = Random.Range(1, 3);
             if (dir == 1) jellyfish.GetComponent<SpriteRenderer>().flipX = true;
