@@ -27,7 +27,7 @@ public class FishSpawner : MonoBehaviour
     {
         if (spawnCount < maxSpawn)
         {
-            GameObject fish = Instantiate(smallFish[Random.Range(0, smallFish.Count)], new Vector3(player.transform.position.x + Random.Range(-20f, 20f), Random.Range(-2.6f, 10f), 0), Quaternion.identity);
+            GameObject fish = Instantiate(smallFish[Random.Range(0, smallFish.Count)], new Vector3(player.transform.position.x + Random.Range(-20f, 20f), Random.Range(-3f, 6.5f), 0), Quaternion.identity);
             fish.GetComponent<Fish>().SetPlayer(player);
             int dir = Random.Range(1, 3);
             if (dir == 1) fish.GetComponent<SpriteRenderer>().flipX = true;
