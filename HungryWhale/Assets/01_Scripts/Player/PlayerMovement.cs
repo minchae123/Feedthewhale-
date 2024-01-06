@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 		Move();
 		Flip();
 
-		if(Input.GetKeyDown(KeyCode.U))
+		if (Input.GetKeyDown(KeyCode.U))
 			BigScale();
 	}
 
@@ -37,13 +37,15 @@ public class PlayerMovement : MonoBehaviour
 
 		dir = new Vector2(x, y);
 
-		if(dir.magnitude > 0)
+		if (dir.magnitude > 0)
 			player.playerAnimator.SetMove(1);
 		else
 			player.playerAnimator.SetMove(0);
 
+		Vector3 pos = transform.position + (dir * moveSpeed * Time.deltaTime);
+		pos.y = Mathf.Clamp(pos.y, -4.87f, 6.54f);
 
-		transform.position += dir * moveSpeed * Time.deltaTime;
+		transform.position = pos;
 	}
 
 	public void Flip()
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public void BigScale()
 	{
-		transform.localScale *= scaleAmount; 
+		transform.localScale *= scaleAmount;
 	}
 
 	public void SpeedControl(float speed)
