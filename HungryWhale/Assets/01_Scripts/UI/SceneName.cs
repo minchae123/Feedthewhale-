@@ -5,5 +5,5 @@ using UnityEngine;
 public class SceneName
 {
     public const string Intro = "";
-    public const string InGame = "";
+    public const string InGame = "InGame";
 }
