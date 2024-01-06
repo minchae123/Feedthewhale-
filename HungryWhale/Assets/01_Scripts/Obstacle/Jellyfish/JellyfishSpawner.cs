@@ -22,6 +22,7 @@ public class JellyfishSpawner : MonoBehaviour
         player = GameObject.Find("Player");
         StartCoroutine(FishSpawn());
     }
+
     private IEnumerator FishSpawn()
     {
         if (spawnCount < maxSpawn)

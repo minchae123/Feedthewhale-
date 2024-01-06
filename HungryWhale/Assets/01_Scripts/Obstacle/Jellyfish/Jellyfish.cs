@@ -17,6 +17,9 @@ public class Jellyfish : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<Player>().DecreaseHP(5);
+            collision.GetComponent<PlayerMovement>().SpeedControl(0);
+            JellyfishSpawner.instance.spawnCount--;
+            Destroy(gameObject);
         }
     }
 
@@ -27,7 +30,7 @@ public class Jellyfish : MonoBehaviour
 
     private void Check()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) > 18)
+        if (Vector3.Distance(player.transform.position, transform.position) > 15)
         {
             JellyfishSpawner.instance.spawnCount--;
             Destroy(gameObject);
