@@ -17,7 +17,7 @@ public class OceanCurrents : MonoBehaviour
         StartCoroutine(ActiveOceanCurrents());
     }
 
-    IEnumerator ActiveOceanCurrents()
+    public IEnumerator ActiveOceanCurrents()
     {
         while(true)
 		{

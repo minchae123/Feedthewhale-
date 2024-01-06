@@ -26,9 +26,6 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Move();
 		Flip();
-
-		if (Input.GetKeyDown(KeyCode.U))
-			BigScale();
 	}
 
 	public void Move()
@@ -79,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		moveSpeed = speed;
 		yield return new WaitForSeconds(time);
+		moveSpeed = basicSpeed;
+	}
+
+	public void SpeedZero()
+	{
+		moveSpeed = 0;
+	}
+
+	public void ResetSpeed()
+	{
 		moveSpeed = basicSpeed;
 	}
 }

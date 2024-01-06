@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
+using DG.Tweening;
+using TMPro;
 
 public class Anchor : MonoBehaviour
 {
@@ -16,15 +19,18 @@ public class Anchor : MonoBehaviour
 
     private bool isCatch = false;
 
-    public float moveSpeed = 5f; // 이동 속도
-    public float changeInterval = 2f; // 방향 변경 주기
+    public float floatSpeed = 1.0f; // 둥둥 떠다니는 속도
+    public float floatHeight = 1.0f; // 둥둥 높이
 
-    private float timer; // 경과 시간
-    private Vector3 randomDirection; // 랜덤한 이동 방향
+    private Vector2 startPosition;
+
+	[SerializeField] private Image space;
+	[SerializeField] private TextMeshProUGUI spaceTxt;
 
     private void Start()
     {
         _currentTime = _clearTime;
+        startPosition = transform.position;
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -33,6 +39,12 @@ public class Anchor : MonoBehaviour
         {
             isCatch = true;
             p.transform.parent = gameObject.transform;
+            float x = Random.Range(2, 4);
+            float y = Random.Range(2, 4);
+            transform.DOMove(new Vector3(transform.position.x + x, transform.position.y + y, 0), 5);
+            FindObjectOfType<PlayerMovement>().SpeedZero();
+            FindObjectOfType<OceanCurrents>().StopAllCoroutines();
+            StartCoroutine(FadeSpace());
         }
     }
 
@@ -42,7 +54,11 @@ public class Anchor : MonoBehaviour
 		{
             FastTyping();
         }
+
+        if(!isCatch)
+            Move();
     }
+
 
     private void FastTyping()
     {
@@ -67,6 +83,15 @@ public class Anchor : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        Vector2 currentPosition = transform.position;
+
+        currentPosition.y = startPosition.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+
+        transform.position = currentPosition;
+    }
+
     IEnumerator ShakeCam(float delay, float value)
     {
         _virtualCameraNoise = Cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -83,12 +108,39 @@ public class Anchor : MonoBehaviour
         isCatch = false;
         Player p = FindObjectOfType<Player>();
         p.transform.parent = null;
+        FindObjectOfType<PlayerMovement>().ResetSpeed();
+        StartCoroutine(NewHoke());
+
+        _virtualCameraNoise = Cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        _virtualCameraNoise.m_AmplitudeGain = 0;
+        _virtualCameraNoise.m_FrequencyGain = 0;
+        space.gameObject.SetActive(false);
+
+        FindObjectOfType<OceanCurrents>().StartCoroutine(FindObjectOfType<OceanCurrents>().ActiveOceanCurrents());
+
+        Destroy(gameObject);
     }
+
+    IEnumerator NewHoke()
+	{
+		Player p = FindObjectOfType<Player>(); 
+        Instantiate(this, new Vector3(p.transform.position.x + Random.Range(-20f, 20f), p.transform.position.y + Random.Range(-2.6f, 7f), 0), Quaternion.identity);
+        yield return null;
+	}
 
     private void GameOver()
     {
         Player p = FindObjectOfType<Player>();
         p.transform.parent = null;
+
         print("게임 오바");
+    }
+
+    IEnumerator FadeSpace()
+	{
+        space.gameObject.SetActive(true);
+        space.DOFade(0, 0.5f).SetLoops(-1, LoopType.Yoyo);
+        spaceTxt.DOFade(0, 0.5f).SetLoops(-1, LoopType.Yoyo);
+        yield return null;
     }
 }
