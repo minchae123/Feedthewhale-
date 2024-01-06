@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    private void Update()
-    {
-        
-    }
+    [Header("¿¡¼Â")]
+    public List<Sprite> sprites = new List<Sprite>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
