@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4550116774604783274}
   - component: {fileID: 4550116774604783279}
   - component: {fileID: 4550116774604783278}
-  - component: {fileID: 4550116774604783277}
+  - component: {fileID: 8647843336587004243}
   m_Layer: 0
   m_Name: Trash
   m_TagString: Untagged
@@ -125,7 +125,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &4550116774604783277
+--- !u!50 &8647843336587004243
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
